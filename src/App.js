@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import './App.css';
 import FamilyTree from './components/FamilyTree';
 

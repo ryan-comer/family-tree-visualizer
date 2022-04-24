@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tree_members",
+  "info": {
+    "singularName": "tree-member",
+    "pluralName": "tree-members",
+    "displayName": "TreeMember",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "firstName": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "biography": {
+      "type": "richtext"
+    },
+    "parent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tree-member.tree-member",
+      "inversedBy": "children"
+    },
+    "children": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tree-member.tree-member",
+      "mappedBy": "parent"
+    },
+    "lastName": {
+      "type": "string"
+    }
+  }
+}
